@@ -4,7 +4,7 @@
 
 # Importing ElectricBike instead of Bike
 # from bike import Bike
-from bike import ElectricBike
+from elecrticbike import ElectricBike
 
 try:
 
@@ -14,7 +14,6 @@ try:
     #  Brake type: electric
 
     # I must create an instance of an ElectricBike, not a Bike
-    # myBike = Bike(12, 2, "hand")
     myBike = ElectricBike(5, 3)
 
     # Print our some bike info
