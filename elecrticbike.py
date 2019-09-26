@@ -1,3 +1,7 @@
+# Ken Holm
+# Purpose:  The ElectricBike class, a subclass of the Bike class
+# Class declaration
+
 from bike import Bike
 
 
