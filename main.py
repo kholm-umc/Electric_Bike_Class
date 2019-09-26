@@ -4,7 +4,7 @@
 
 # Importing ElectricBike instead of Bike
 # from bike import Bike
-from elecrticbike import ElectricBike
+from electricbike import ElectricBike
 
 try:
 
