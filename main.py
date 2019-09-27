@@ -1,6 +1,6 @@
 # Ken Holm
-# Purpose: Demonstrate how to use a class
-#  we created
+# Purpose: Demonstrate how to use a subclass
+#  we created from a superclass
 
 # Importing ElectricBike instead of Bike
 # from bike import Bike
