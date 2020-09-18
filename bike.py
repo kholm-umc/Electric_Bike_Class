@@ -2,7 +2,6 @@
 # Purpose:  The Bike class
 # Class declaration
 
-
 class Bike:
     # Private properties
     __numberOfGears = 1
@@ -13,19 +12,19 @@ class Bike:
     # Class instantiator
     def __init__(self, numberOfGears: int = 1, numberOfWheels: int = 2, brakeType: str = "hand"):
         # Set all our properties
-        self.setnumberofgears(numberOfGears)
-        self.setnumberofwheels(numberOfWheels)
-        self.setbraketype(brakeType)
+        self.setNumberOfGears(numberOfGears)
+        self.setNumberOfWheels(numberOfWheels)
+        self.setBrakeType(brakeType)
 
-        self.setcurrentgear(1)
+        self.setCurrentGear(1)
 
     # Getter for the __numberOfGears property
-    def getnumberofgears(self):
+    def getNumberOfGears(self):
         return self.__numberOfGears
 
     # Setter for the __numberOfGears property
     #  Valid values are integers from 1 to 15
-    def setnumberofgears(self, numberOfGears: int) -> None:
+    def setNumberOfGears(self, numberOfGears: int) -> None:
         try:
             # Is the argument an integer?
             if int(numberOfGears):
@@ -41,12 +40,12 @@ class Bike:
             raise ValueError(f"{numberOfGears} is not between 1 and 15")
 
     # Getter for the __currentGear property
-    def getcurrentgear(self) -> int:
+    def getCurrentGear(self) -> int:
         return self.__currentGear
 
     # Setter for the __currentGear property
     #  Valid values are integers from 1 to 15
-    def setcurrentgear(self, currentGear: int) -> None:
+    def setCurrentGear(self, currentGear: int) -> None:
         try:
             # Is the argument an integer?
             if int(currentGear):
@@ -62,12 +61,12 @@ class Bike:
             raise ValueError(f"{currentGear} is not between 1 and {self.__numberOfGears}")
 
     # Getter for the __numberOfWheels property
-    def getnumberofwheels(self) -> int:
+    def getNumberOfWheels(self) -> int:
         return self.__numberOfWheels
 
     # Setter for the __numberOfWheels property
     #  Valid values are integers from 1 to 4
-    def setnumberofwheels(self, numberOfWheels: int) -> None:
+    def setNumberOfWheels(self, numberOfWheels: int) -> None:
         try:
             # Is the argument an integer?
             if int(numberOfWheels):
@@ -83,12 +82,12 @@ class Bike:
             raise ValueError(f"{numberOfWheels} is not between 1 and 4")
 
     # Getter for the __brakeType property
-    def getbraketype(self) -> str:
+    def getBrakeType(self) -> str:
         return self.__brakeType
 
     # Setter for the __brakeType property
     #  Valid values are integers from 1 to 15
-    def setbraketype(self, brakeType: str) -> None:
+    def setBrakeType(self, brakeType: str) -> None:
         try:
             # Is the argument an integer?
             if str(brakeType):
@@ -105,14 +104,12 @@ class Bike:
 
     # Increase the gear
     #  Do not allow gear to be over the __numberOfGears
-    def increasegear(self) -> None:
-        if self.getcurrentgear() < self.__numberOfGears:
-            self.setcurrentgear(self.getcurrentgear() + 1)
+    def increaseGear(self) -> None:
+        if self.getCurrentGear() < self.__numberOfGears:
+            self.setCurrentGear(self.getCurrentGear() + 1)
 
     # Decrease the gear
     #  Do not allow gear to be below 1
-    def decreasegear(self) -> None:
-        if self.getcurrentgear() > 1:
-            self.setcurrentgear(self.getcurrentgear() - 1)
-
-
+    def decreaseGear(self) -> None:
+        if self.getCurrentGear() > 1:
+            self.setCurrentGear(self.getCurrentGear() - 1)

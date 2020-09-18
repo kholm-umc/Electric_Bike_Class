@@ -4,59 +4,59 @@
 
 from bike import Bike
 
-
 class ElectricBike(Bike):
     # Private properties
     __charge = 99
+    __maxCharge = 100
 
     # Class instantiator
     # NOTE: I am not requiring brake type here.
     def __init__(self, numberOfGears: int = 0, numberOfWheels: int = 2):
         # Set all our properties
-        self.setnumberofgears(numberOfGears)
-        self.setnumberofwheels(numberOfWheels)
-        self.setbraketype("electric")
+        self.setNumberOfGears(numberOfGears)
+        self.setNumberOfWheels(numberOfWheels)
+        self.setBrakeType("electric")
 
-        self.setcurrentgear(1)
+        self.setCurrentGear(1)
 
     # Getter for the __charge property
-    def getcharge(self):
+    def getCharge(self):
         return self.__charge
 
     # Setter for the __charge property
     #  Valid values are integers from 0 to 100
-    def setcharge(self, charge: int) -> None:
+    def setCharge(self, charge: int) -> None:
         try:
             # Is the argument an integer?
             if int(charge):
                 pass
 
         except Exception as e:
-            raise TypeError(f"{charge} is not an integer: {e}")
+            print(f"Warning: {charge} is not a valid integer")
 
         # It is an integer, is it between 0 and 100?
-        if -1 < charge < 101:
+        if -1 < charge < self.__maxCharge:
             self.__charge = charge
         else:
-            raise ValueError(f"{charge} is not between 0 and 100")
+            print(f"WARNING: {charge} appears to be less than 1 or greater than {self.__maxCharge}")
 
     # Getter for the __brakeType property
-    def getbraketype(self) -> str:
+    def getBrakeType(self) -> str:
         return self.__brakeType
 
     # Setter for the __brakeType property
     #  Valid values are integers from 0 to 15
-    def setbraketype(self, brakeType: str) -> None:
+    def setBrakeType(self, brakeType: str) -> None:
         try:
             # Is the argument an integer?
             if str(brakeType):
                 pass
 
         except Exception as e:
-            raise TypeError(f"{brakeType} is not an string: {e}")
+            print(f"WARNING: You must supply a brake type")
 
         # It is a string, is must be 'electric'
         if brakeType == "electric":
             self.__brakeType = brakeType
         else:
-            raise ValueError(f"{brakeType} is not 'electric'")
+            print(f"WARNING: A brake type of {brakeType} is not allowed")
