@@ -6,12 +6,12 @@ from bike import Bike
 
 class ElectricBike(Bike):
     # Private properties
-    __charge = 99
-    __maxCharge = 100
+    __charge: int = 99
+    __maxCharge: int = 100
 
     # Class instantiator
-    # NOTE: I am not requiring brake type here.
-    def __init__(self, numberOfGears: int = 0, numberOfWheels: int = 2):
+    # NOTE: I am not asking for brake type here.
+    def __init__(self, numberOfGears: int = 0, numberOfWheels: int = 2) -> None:
         # Set all our properties
         self.setNumberOfGears(numberOfGears)
         self.setNumberOfWheels(numberOfWheels)
@@ -20,7 +20,7 @@ class ElectricBike(Bike):
         self.setCurrentGear(1)
 
     # Getter for the __charge property
-    def getCharge(self):
+    def getCharge(self) -> int:
         return self.__charge
 
     # Setter for the __charge property

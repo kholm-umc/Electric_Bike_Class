@@ -4,13 +4,13 @@
 
 class Bike:
     # Private properties
-    __numberOfGears = 1
-    __currentGear = 3
-    __numberOfWheels = 3
-    __brakeType = "hand"
+    __numberOfGears: int = 1
+    __currentGear: int = 3
+    __numberOfWheels: int = 3
+    __brakeType: str = "hand"
 
     # Class instantiator
-    def __init__(self, numberOfGears: int = 1, numberOfWheels: int = 2, brakeType: str = "hand"):
+    def __init__(self, numberOfGears: int = 1, numberOfWheels: int = 2, brakeType: str = "hand") -> None:
         # Set all our properties
         self.setNumberOfGears(numberOfGears)
         self.setNumberOfWheels(numberOfWheels)
@@ -19,7 +19,7 @@ class Bike:
         self.setCurrentGear(1)
 
     # Getter for the __numberOfGears property
-    def getNumberOfGears(self):
+    def getNumberOfGears(self) -> int:
         return self.__numberOfGears
 
     # Setter for the __numberOfGears property
